@@ -1,0 +1,145 @@
+<html>
+<head>
+<title>GalaxyMage</title>
+<link rel="stylesheet" type="text/css" href="style.css" title="GalaxyMage Stylesheet" />
+<meta name="Keywords" content="GalaxyMage,tactical,strategic,rpg,game,open-source,Linux" />
+<meta name="Description" content="GalaxyMage is an open-source tactical/strategic RPG for Windows, Linux, and Macintosh." />
+</head>
+<body>
+
+<h1>Config File Format</h1>
+
+Each data file is actually written in the Python language. This is
+just done for convenience, as it makes loading the data files a
+snap. So it might help to get a text editor that supports Python
+syntax highlighting, as it will be easier to notice if you make some
+sort of error. Don't think that the data files will be difficult to
+write just because we use Python to write them -- all the file formats
+have been designed to be easy to edit, even if you have no knowledge
+of programming.
+<p>
+If you are familiar with Python, the format of the data files is
+probably immediately obvious to you, and you can skip most of the
+details that are here.
+
+<h2>Config file types</h2>
+
+There are a wide variety of things that can be specified in config
+files: scenarios, units, classes, abilities, and so on. All the config
+files share the same basic format, but when you want to create a
+specific type of thing (such as an ability) you'll need to look at the
+specific reference for that type of thing to find out the full details
+-- such as what sorts of things you need to specify. References for
+each type of config file can be found at the bottom of this page.
+
+<h2>Sample config file</h2>
+
+Here's a sample config file. It defines the "Dart" ability. (You can
+find the latest version of this file in
+<code>data/core/abilities/dart.py</code>.)
+
+<hr>
+<pre>
+# "Dart" action ability.
+
+VERSION = 1
+
+NAME = "Dart"
+DESCRIPTION = "Throw a dart."
+COST = 5
+
+ABILITY_TYPE = ACTION
+TARGET_TYPE = HOSTILE
+
+RANGE = Circle(1, 4)
+AOE = Single()
+
+EFFECTS = [Damage(power=1.25, damageType=PHYSICAL)]
+
+SOUND = 'sword-hit-large'
+</pre>
+<hr>
+
+<p>
+Every type of data file has some number of <i>keys</i> that have
+to be given <i>values</i>. Some of these keys are required, and some
+are optional. For more information on which keys you need to fill in,
+you need to look at the reference for that particular type of data
+file. For an ability file, we must specify values for the most of
+these keys (such as <code>COST</code> and <code>TARGET_TYPE</code>),
+but the <code>SOUND</code> key is optional.
+<p>
+The basic syntax is <code>SOME_KEY = some_value</code>. The
+<code>SOME_KEY</code> needs to start in the first column (all the way to
+the left).
+<p>
+Blank lines are ignored. Any line can contain a comment. Comments
+start with a pound sign (<code>#</code>) and continue to the end of
+the line. Any text inside a comment is ignored.
+<p>
+All config files have a <code>VERSION</code> key. This is the version
+of the <i>config file format</i>, not the version of the specific
+thing you are working on. For now, <code>VERSION</code> should always
+be set to <code>1</code>. If we come up with a new file format in the future,
+GalaxyMage can use the <code>VERSION</code> numbers to know the
+correct way of loading both the old and new files.
+<p>
+Each value needs to be a specific type. For instance,
+<code>COST</code> has to be an integer. Again, the reference for the
+specific file type will tell you what kind of value each key
+requires. Here's a summary of the various types, and how you write
+them:
+
+<ul>
+
+<li>Integer: a whole number. You specify an integer in the obvious
+way, like this: <code>2</code>, <code>13</code>, <code>42</code>,
+etc. In the example above, the value assigned to <code>COST</code> is
+an integer.</li>
+
+<li>Float: a floating-point number (number with a decimal point.) You
+specify a float in the obvious way: <code>1.25</code>,
+<code>3.0</code>, etc. A float is used in part of the value of the
+<code>EFFECTS</code> key.</li>
+
+<li>String: a sequence of characters enclosed in quotes. You can use
+either single-quotes or double-quotes; there is no difference between
+the two. Examples: <code>"Dart"</code>,
+<code>'sword-hit-large'</code>. Strings are often used to specify file
+names. For instance, the <code>SOUND</code> key is used to specify
+which sound file to play when the "dart" action occurs.</li>
+
+<li>List: a list of values, enclosed in square brackets and separated
+by commas. Often, the values in the list need to have a certain
+type. For instance, a list of integers would look like this: <code>[2,
+5, 3, 4]</code>; a list of strings would look like this:
+<code>['this', 'is', 'a', 'list']</code>. You can also use parentheses
+instead of square brackets: <code>(1, 2, 3, 4)</code>. Like with
+strings, there is no difference between using brackets or
+parentheses.</li>
+
+<li>Enumerations: sometimes, there are only a couple possible choices
+for a value. For instance, there are only 3 valid values for
+<code>TARGET_TYPE</code>: <code>HOSTILE</code>, <code>FRIENDLY</code>,
+and <code>FRIENDLY_AND_HOSTILE</code>. If a key requires an
+enumeration, the reference for the type of data file you are working
+on will tell you what values are allowed.</li>
+
+<li>Object: some specific Python object. Objects are similar to
+enumerations in that the valid values will be explained in the
+reference for the type of data file you are working on. The difference
+is that objects can take <i>parameters</i> -- extra values that
+provide additional configuration flexibility. This is what
+<code>Circle(1, 4)</code> and <code>Single()</code> are -- specific
+Python objects that represent a circle with radius 4 and a single
+square, respectively.</li>
+
+</ul>
+
+<h1>Data File References</h1>
+
+<a href="maps/index.html">Map file format</a><br>
+<a href="file-formats.html">All other file formats</a>
+<p>
+</body>
+</html>

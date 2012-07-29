@@ -1,0 +1,7 @@
+The files in this directory are provided by the following
+contributors:
+
+Colin McMillen
+License: public domain
+
+* All textures

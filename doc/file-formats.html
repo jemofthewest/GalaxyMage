@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>GalaxyMage</title>
+<link rel="stylesheet" type="text/css" href="style.css" title="GalaxyMage Stylesheet" />
+<meta name="Keywords" content="GalaxyMage,tactical,strategic,rpg,game,open-source,Linux" />
+<meta name="Description" content="GalaxyMage is an open-source tactical/strategic RPG for Windows, Linux, and Macintosh." />
+</head>
+<body>
+
+<h1>File Formats Reference</h1>
+
+This document will eventually be a complete reference for all the
+different GalaxyMage config file formats. Unfortunately, it's
+currently incomplete... some options aren't yet documented. We're
+working on it. :) But some documentation is better than no
+documentation, and you'll probably do just fine if you look at some
+examples and work from those.
+
+<h2>Scenario Files</h2>
+
+<a href="http://svn.gna.org/viewcvs/tactics/trunk/data/demo/scenarios/castle.py?view=markup">Sample file</a>
+<p>
+<table border="2">
+<tr>
+<td><b>Key</b></td><td><b>Req.</b></td><td><b>Type</b></td><td><b>Comments</b></td>
+</tr>
+
+<tr>
+<td>MAP</td><td>X</td><td>string</td><td>Name of the map file to load.</td>
+</tr>
+
+<tr>
+<td>ENDING_CONDITIONS</td><td>X</td><td>list of enumerations</td>
+
+<td>For now, this should always be set as follows: 
+<pre>
+ENDING_CONDITIONS = [Battle.PLAYER_DEFEATED,
+                     Battle.DEFEAT_ALL_ENEMIES]
+</pre>
+
+</td>
+</tr>
+
+<tr>
+<td>FACTIONS</td><td>X</td><td>list of Faction objects</td><td>Undocumented</td>
+</tr>
+
+<tr>
+<td>LIGHTING</td><td>-</td><td>Light.Environment object</td><td>Undocumented</td>
+</tr>
+
+<tr>
+<td>MUSIC</td><td>-</td><td>string</td><td>Filename of a music file to play during the battle.</td>
+</tr>
+</table>
+
+<h2>Units</h2>
+
+<a href="http://svn.gna.org/viewcvs/tactics/trunk/data/demo/units/adept1.py?view=markup">Sample file</a>
+<p>
+
+<table border="2">
+<tr>
+<td><b>Key</b></td><td><b>Req.</b></td><td><b>Type</b></td><td><b>Comments</b></td>
+</tr>
+
+<tr>
+<td>CLASSES</td><td>X</td><td>list of lists</td><td>Undocumented</td>
+</tr>
+
+<tr>
+<td>GENDER</td><td>X</td><td>enumeration</td><td>Set to MALE, FEMALE,
+or NEUTER.
+</td> 
+</tr>
+</table>
+
+<h2>Classes</h2>
+
+<a href="http://svn.gna.org/viewcvs/tactics/trunk/data/core/classes/adept.py?view=markup">Sample file</a>
+<p>
+<table border="2">
+<tr>
+<td><b>Key</b></td><td><b>Req.</b></td><td><b>Type</b></td><td><b>Comments</b></td>
+</tr>
+
+<tr>
+<td>NAME</td><td>X</td><td>string</td><td>The class name that is displayed to the player.</td>
+</tr>
+
+<tr>
+<td>MOVE</td><td>X</td><td>integer</td><td>Base movement distance for
+a unit that has this class.</td> 
+</tr>
+
+<tr>
+<td>JUMP</td><td>X</td><td>integer</td><td>Base jump height for a unit
+that has this class.</td> </tr>
+
+<tr>
+<td>*_BASE</td><td>X</td><td>integer</td><td>Base stat value for a
+unit that starts in this class.</td> </tr>
+
+<tr>
+<td>*_GROWTH</td><td>X</td><td>float</td><td>The average amount that
+this stat increases by every time a unit levels in this class.</td>
+</tr>
+
+<tr>
+<td>*_MULT</td><td>X</td><td>float</td><td>Will be used for multi-classing; always set to <code>1.0</code> for now.</td>
+</tr>
+
+<tr>
+<td>SPRITE_ROOT</td><td>X</td><td>string</td><td>Used to determine which sprites to load to display the unit. For example, if SPRITE_ROOT is set to "squire", the default standing pose for the unit will be <code>squire-male-standing-1.png</code> (assuming the unit is male).</td>
+</tr>
+
+<tr>
+<td>ABILITIES</td><td>X</td><td>list of lists</td><td>Undocumented</td>
+</tr>
+</table>
+
+<h2>Abilities</h2>
+
+<a href="http://svn.gna.org/viewcvs/tactics/trunk/data/core/abilities/dart.py?view=markup">Sample file</a>
+<p>
+<table border="2">
+<tr>
+<td><b>Key</b></td><td><b>Req.</b></td><td><b>Type</b></td><td><b>Comments</b></td>
+</tr>
+
+<tr>
+<td>NAME</td><td>X</td><td>string</td><td>The ability name that is displayed to the player.</td>
+</tr>
+
+<tr>
+<td>DESCRIPTION</td><td>X</td><td>string</td><td>A description of the ability. Also displayed to the player.</td>
+</tr>
+
+<tr>
+<td>COST</td><td>X</td><td>integer</td><td>The cost of the ability, in SP. Can be set to 0 for abilities that don't require SP.</td>
+</tr>
+
+<tr>
+<td>ABILITY_TYPE</td><td>X</td><td>enumeration</td><td>Always set this
+to ACTION for now.</td> </tr>
+
+<tr>
+<td>TARGET_TYPE</td><td>X</td><td>enumeration</td><td>Set to one of: HOSTILE, FRIENDLY, FRIENDLY_AND_HOSTILE.</td>
+</tr>
+
+<tr>
+<td>RANGE</td><td>X</td><td>Range object</td><td>Range of the attack. Valid values are currently undocumented... sorry.</td>
+</tr>
+
+<tr>
+<td>AOE</td><td>X</td><td>Range object</td><td>Area-of-effect of the
+attack. Valid values are currently undocumented... sorry.</td> 
+</tr>
+
+<tr>
+<td>EFFECTS</td><td>X</td><td>list of Effect objects</td><td>Undocumented</td> 
+</tr>
+
+<tr>
+<td>SOUND</td><td>-</td><td>string</td><td>Filename of a sound file that should be played when the ability is used.</td> 
+</tr>
+</table>
+
+
+
+
+</body>
+</html>

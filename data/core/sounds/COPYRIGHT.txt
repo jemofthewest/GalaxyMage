@@ -1,0 +1,35 @@
+The files in this directory are provided by the following
+contributors:
+
+Ingo Ruhnke (distributed with Pingus - http://pingus.seul.org)
+License: GNU GPL
+
+* cursor-click.wav (originally plop.wav)
+
+John Harper (distributed with Sawfish - http://sawmill.sourceforge.net)
+License: GNU GPL
+
+* cursor-move.wav (originally clicked.wav)
+
+The GNOME Project
+License: GNU GPL
+
+* cursor-cancel.wav (originally generic.wav)
+
+Jonah Dempcy (http://www.ourmedia.org/taxonomy/term/19347)
+License: Creative Commons Sampling Plus 1.0
+
+* cursor-invalid.wav (originally oneshot-access-denied-long.wav)
+
+Jeff Leary (http://www.brickfilms.com/sounds.php)
+License: public domain
+
+* arrow-hit.ogg
+* mace-hit.ogg
+* staff-hit.ogg
+* sword-hit-large.ogg
+
+The Battle for Wesnoth team (http://www.wesnoth.org)
+License: GNU GPL
+
+* fire.wav

@@ -1,0 +1,243 @@
+<html>
+<head>
+<title>GalaxyMage</title>
+<link rel="stylesheet" type="text/css" href="style.css" title="GalaxyMage Stylesheet" />
+<meta name="Keywords" content="GalaxyMage,tactical,strategic,rpg,game,open-source,Linux" />
+<meta name="Description" content="GalaxyMage is an open-source tactical/strategic RPG for Windows, Linux, and Macintosh." />
+</head>
+<body>
+
+<h1>Directory Structure</h1>
+
+This page gives an overview of the directory structure of the
+GalaxyMage source tree. 
+<p>
+If you're interested in designing scenarios,
+units, abilities, and so on, you probably only need to read all about
+the files in <code>data/</code>. 
+<p>
+If you intend to develop GalaxyMage code, the files in
+<code>src/</code> are probably most important, but you'll probably
+also want an idea of how the stuff in <code>data/</code> works.
+
+<h2>./</h2>
+The root directory of the GalaxyMage source tree. Contents:
+<p>
+<code>GalaxyMage.py</code> - the main GalaxyMage script. Imports <code>src/Main.py</code> and executes the <code>main()</code> function defined there.
+<p>
+<code>*.txt</code> - top-level documentation files.
+
+<h2>data/</h2>
+
+The directory containing all the GalaxyMage data files. This includes
+images, sounds, music, and all the configuration files that define
+classes, abilities, scenarios, maps, and so on. 
+
+The <code>data/</code> directory has at least three subdirectories:
+
+<h3>data/core</h3>
+
+These are the "core" files that can be used by any GalaxyMage
+campaign. This includes the base unit classes, the abilities required
+by these classes, unit sprites, fonts, sound effects, and some
+plain-text files.
+
+<h3>data/extra</h3>
+
+This contains additional data files that would be part of
+<code>data/core/</code>, but are considered "optional". Basically,
+this directory is for big data files (such as music) that we might
+eventually want to bundle separately, so that players with slow
+Internet connections can still download GalaxyMage reasonably quickly.
+
+<h3>data/some-campaign-name</h3>
+
+Every GalaxyMage campaign lives in a separate subdirectory of
+<code>data/</code>. A campaign's directory contains the maps,
+scenarios, and unit definitions that are used by that campaign. It may
+also contain extra class definitions, abilities, sprites, sound
+effects, music, and so on, that aren't available in the "core" data
+files. GalaxyMage is currently distributed with one campaign, in
+<code>data/demo/</code>, that contains a few simple scenarios. If you
+want to start on your own campaign, you should start by creating a
+separate directory under <code>data/</code>.
+
+<h3>How data files are loaded</h3>
+
+All files in the <code>data/</code> directory are loaded by the code
+in the file <code>src/Resources.py</code>. Files are referred to by a
+name that contains no subdirectories and no filename extension, such
+as "cursor-click". The <code>Resources</code> module takes care of
+looking at all the right places to find the file. First, it looks in
+the current campaign directory; then, it looks in the
+<code>extra</code> directory; finally, it looks in the
+<code>core</code> directory. <code>Resources</code> knows what type of
+file is being asked for, and uses that to determine which
+subdirectories to look in and what filename extension to add. For
+instance, sound files need to be in a subdirectory called
+<code>sounds</code>, and might end in either <code>.ogg</code> or
+<code>.wav</code>. So if the current campaign is called "demo",
+<code>Resources</code> will look for the file "cursor-click" in the
+following locations:
+
+<pre>
+    data/demo/sounds/cursor-click.ogg
+    data/demo/sounds/cursor-click.wav
+    data/extra/sounds/cursor-click.ogg
+    data/extra/sounds/cursor-click.wav
+    data/core/sounds/cursor-click.ogg
+    data/core/sounds/cursor-click.wav
+</pre>
+
+The first file found is the one that will be used. If none of these
+paths contains the desired file, an error will occur. This error will
+be handled gracefully if it's an optional sort of file, such as a
+sound or music file, but much less gracefully if it's something
+important, like a class definition or a map file. :)
+<p>
+I mentioned before that the <code>Resources</code> knows to look in
+the <code>sounds</code> subdirectories to find sounds. Here's a list
+of all the subdirectories for different types of data files.
+
+<dl>
+
+<dt><code>data/*/abilities</code></dt>
+<dd>Files defining abilities that are used by units in battle.</dd>
+
+<dt><code>data/*/classes</code></dt>
+<dd>Files defining unit classes.</dd>
+
+<dt><code>data/*/fonts</code></dt>
+<dd>TrueType font files.</dd>
+
+<dt><code>data/*/images</code></dt>
+<dd>Images. These are mostly unit sprites. All image files are in the
+PNG format. Alpha values (translucency) are fully supported by
+GalaxyMage.</dd>
+
+<dt><code>data/*/maps</code></dt>
+<dd>Files defining our 3D battle maps.</dd>
+
+<dt><code>data/*/music</code></dt>
+<dd>Music files, in <code>.ogg</code> format.</dd>
+
+<dt><code>data/*/scenarios</code></dt>
+<dd>Files defining scenarios. A scenario tells GalaxyMage all it needs
+to know about setting up a battle, including the map name, the units
+on each team, the lighting environment, and so on.</dd>
+
+<dt><code>data/*/sounds</code></dt>
+<dd>Sound effects, in <code>.ogg</code> or <code>.wav</code> format.</dd>
+
+<dt><code>data/*/text</code></dt>
+<dd>Miscellaneous text files.</dd>
+
+<dt><code>data/*/textures</code></dt> 
+<dd>Texture files. Like all other images, these are in PNG
+format.</dd>
+
+<dt><code>data/*/units</code></dt>
+<dd>Files defining the individual units that are used in scenarios.</dd>
+
+</dl>
+
+<h2>doc/</h2>
+
+All the GalaxyMage documentation is contained here.
+
+<h2>src/</h2>
+
+All the GalaxyMage source code is contained here. Important contents:
+<p>
+<code>Main.py</code> - The main script. This is what runs when
+GalaxyMage is executed. Parses command-line arguments, detects whether
+needed libraries are installed, sets up logging, sets up the main
+window, and starts the desired scenario.
+<p>
+<code>Resources.py</code> - This file is the interface for loading all
+sorts of data files off the disk. For more information, see the "How
+data files are loaded" section above.
+<p>
+<code>Sound.py</code> - Code for setting up pygame's mixer system and
+playing sound effects on various channels.  
+
+<h3>src/ai</h3>
+
+This directory contains all code related to opponent AI.
+
+<h3>src/engine</h3>
+
+This directory contains all code relating to the game engine
+itself. Important contents:
+<p>
+<code>Ability.py, Effect.py, Range.py</code> - These files all deal
+with abilities, their ranges, and effects.
+<p>
+<code>Battle.py</code> - The battle engine itself. Determines the turn
+order, notifies the GUI or AI when it's time for the player or
+opponent to act, applies movement and action commands, and checks
+victory conditions.
+<p>
+<code>Class.py</code> - This file deals with unit classes.
+<p>
+<code>Faction.py</code> - Code relating to unit factions -- whether
+different units are hostile, friendly, or neutral toward one another.
+<p>
+<code>Light.py</code> - Defines lights and lighting environments.
+<p>
+<code>Map.py</code> - Code relating to the battle map, including the
+definition of the map itself, breadth-first search on the map,
+calculation of movement ranges, calculation of nearest units to a
+given point, and so on.
+<p>
+<code>Name.py</code> - Picks random names for units based on their
+genders.
+<p>
+<code>Scenario.py</code> - Defines scenarios.
+<p>
+<code>Unit.py</code> - Defines units.
+
+<h3>src/gui</h3>
+
+This directory contains all user-interface code. Importnat files here
+include:
+<p>
+<code>Camera.py</code> - Keeps track of the current camera position
+and has some utility functions for calculating stuff based on the
+camera position. For instance, it can sort sprites in back-to-front
+order so that they are alpha-blended properly.
+<p>
+<code>Clock.py</code> - Utility code for an FPS clock.
+<p>
+<code>Cursor.py</code> - Code for moving around the on-screen cursor
+-- the blue square on the battle map. This is where the player chooses
+where his units move and attack.
+<p>
+<code>Geometry.py</code> - Utility geometry routines.
+<p>
+<code>GLUtil.py</code> - Contains a bunch of OpenGL convenience
+functions... rendering text to a texture, drawing cubes and sprites on
+screen, and so on.
+<p>
+<code>MainWindow.py</code> - The main window. Contains code for
+initializing the pygame/PyOpenGL systems, handling window resize
+events, handling some other events, and counting/limiting FPS. The
+MainWindow doesn't actually draw anything -- it delegates
+responsibility for that to another object, such as ScenarioGUI.
+<p>
+<code>ScenarioGUI.py</code> - A delegate for displaying an entire
+scenario. Draws the map, cursor, unit sprites, battle menus, and so
+on.
+<p>
+<code>Sprite.py</code> - Definitions of sprites, including unit
+sprites, on-screen text displayers, and menus.
+
+<h2>tools/</h2>
+
+This directory contains scripts and tools that might be useful to
+GalaxyMage developers, but not to players. For example,
+<code>tools</code> contains the scripts used to build the Windows and
+Macintosh binaries when we do an official release.
+<p>
+</body>
+</html>

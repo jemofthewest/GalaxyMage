@@ -1,0 +1,10 @@
+The files in this directory are provided by the following
+contributors:
+
+R. Douglas Barbieri (http://music.dooglio.net)
+License: Creative Commons Attribution-NoDerivs 2.0
+         http://creativecommons.org/licenses/by-nd/2.0/
+
+* barbieri-battle.ogg
+* barbieri-lyta.ogg
+

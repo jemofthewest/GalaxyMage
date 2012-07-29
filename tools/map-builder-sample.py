@@ -1,0 +1,8 @@
+properties('grass')
+newMap(20,20)
+ridge(24, 4, 19, 9, 14, 5, 10)
+properties('rock')
+canyon(-15, 5, 0, 0, 10, 20, 10)
+properties('water')
+river(15, 9, 10)
+MAP = save()

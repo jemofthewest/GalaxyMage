@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>GalaxyMage</title>
+<link rel="stylesheet" type="text/css" href="style.css" title="GalaxyMage Stylesheet" />
+<meta name="Keywords" content="GalaxyMage,tactical,strategic,rpg,game,open-source,Linux" />
+<meta name="Description" content="GalaxyMage is an open-source tactical/strategic RPG for Windows, Linux, and Macintosh." />
+</head>
+<body>
+<h1> How translations works in GalaxyMage</h1>
+<p/>
+<h2>About Gettext framework </h2>
+<br/>
+<p/>
+GalaxyMage uses the gettext framework. This framework is easy to use for a developper point of view
+and powerfull for the translator.<br/> If you want to know more about gettext, go to <a href="http://www.gnu.org/software/gettext/">gettext site</a>
+<br/>
+<p/>
+<h2>Developper point of view </h2>
+<p/>
+For a developper, the translations task aims to translate text string or redifine filename for a specific language.<br/>
+<h3> Translate string </h3> 
+If you want to translate a string, simply call _ method with the string. No more things to do !<br/>
+This is the dummy example :<br/>
+<code>
+	print _("Hello world") 
+</code><br/>
+	if "Hello world" is found in the french dictionnary, the print will ouput <em>Salut le monde</em>
+	else the string is return by _(...) so <em>Hello world</em>  will be printed
+
+
+<h3> Filename</h3>
+
+If a filename must be specific for a language, for example for a voice sound file, 
+we use the same method as string!<br/>
+Since a filename is a string, we use the same method, this is the code use in Name.py to load
+specific name :<br/>
+<code>
+    __maleNames = Resources.text(_("names-male"))
+</code><br/>
+So if a language provides a specific names-male, the dictionnary will contais the specific name
+and it will be return by _(...). <br/>
+In this example, in french language the key names-male is link to <em>noms-homme</em>
+
+<h2>Translator point of view</h2>
+FIXME: to be define !
+
+
+
+
+</body>
+</html>

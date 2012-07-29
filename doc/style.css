@@ -1,0 +1,13 @@
+body {
+  /* background-color: white; */
+  background-color: #d0f0ff;
+  color: black;
+  font-family: verdana, tahoma, helvetica, arial, sans-serif;
+  max-width: 600px;
+  left: 10%;
+  right: 10%;
+  position: absolute;
+  top: 20px;
+  align: center;
+}
+

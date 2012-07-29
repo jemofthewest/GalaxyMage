@@ -1,0 +1,325 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: Mon Feb 20 08:11:02 2006\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: ../data/core/abilities/biteofthevampire.py:3
+msgid "Bite of The Vampire"
+msgstr "Vampirbiss"
+
+#: ../data/core/abilities/biteofthevampire.py:5
+msgid "Bite into your enemy and drink her blood!"
+msgstr "Beiße deinen Gegner und trinke sein Blut!"
+
+#: ../data/core/abilities/crawl.py:3
+msgid "Crawl"
+msgstr "Kriechen"
+
+#: ../data/core/abilities/crawl.py:5
+msgid "Decreases the movement rate of a unit."
+msgstr "Verringert die Geschwindigkeit einer Einheit"
+
+#: ../data/core/abilities/defend.py:3
+msgid "Defend"
+msgstr "Verteidigen"
+
+#: ../data/core/abilities/defend.py:5
+msgid "Increase your defense temporarily."
+msgstr "Erhöht vorübergehend die Verteitigung"
+
+#: ../data/core/abilities/drainlife.py:3
+msgid "Drain Life"
+msgstr "Aderlass"
+
+#: ../data/core/abilities/drainlife.py:5
+msgid "Regenerate yourself at the expense of your enemy."
+msgstr "Regeneration auf Kosten des Gegners"
+
+#: ../data/core/abilities/fire.py:3
+msgid "Fire"
+msgstr "Feuer"
+
+#: ../data/core/abilities/fire.py:5
+msgid "Weak fire spell."
+msgstr "Schwacher Feuer Spruch"
+
+#: ../data/core/abilities/freeze.py:3 ../src/engine/Effect.py:343
+msgid "Freeze"
+msgstr "Einfrieren"
+
+#: ../data/core/abilities/freeze.py:5
+msgid "Weak ice spell. (Sometimes freezes.)"
+msgstr "Schwacher Eis Spruch"
+
+#: ../data/core/abilities/haste.py:3 ../src/engine/Effect.py:347
+msgid "Haste"
+msgstr "Hast"
+
+#: ../data/core/abilities/haste.py:5
+msgid "Increases the speed of a unit."
+msgstr "Erhöht die Geschwindigkeit einer Einheit"
+
+#: ../data/core/abilities/hold.py:3
+msgid "Hold"
+msgstr "Halten"
+
+#: ../data/core/abilities/hold.py:5
+msgid "Holds an enemy in place."
+msgstr "Hält einen Gegner in Position"
+
+#: ../data/core/abilities/lifesink.py:3
+msgid "Life Sink"
+msgstr "Lebenslass"
+
+#: ../data/core/abilities/lifesink.py:5
+msgid "A relatively strong, life draining attack."
+msgstr "Eine relativ starke Atacke, um dem Gegner Leben zu stehlen"
+
+#: ../data/core/abilities/poison.py:3 ../src/engine/Effect.py:361
+msgid "Poison"
+msgstr "Gift"
+
+#: ../data/core/abilities/poison.py:5
+msgid "Poison your enemy, causing him to lose HP every turn."
+msgstr "Vergiftet einen Gegner. Zieht HP in jeder Runde ab"
+
+#: ../data/core/abilities/protect.py:3
+msgid "Protect"
+msgstr "Schützen"
+
+#: ../data/core/abilities/protect.py:5
+msgid "Protect a friend for one turn."
+msgstr "Schütze einen Freund für eine Runde"
+
+#: ../data/core/abilities/regenerate.py:3
+msgid "Regenerate"
+msgstr "Regenerieren"
+
+#: ../data/core/abilities/regenerate.py:5
+msgid "Gives your ally regeneration."
+msgstr "Regeneriert Verbündete"
+
+#: ../data/core/abilities/righteousness.py:3
+msgid "Righteousness"
+msgstr "Rechtschaffenheit"
+
+#: ../data/core/abilities/righteousness.py:5
+msgid "Call forth a righteous flame."
+msgstr ""
+
+#: ../data/core/abilities/sleep.py:3 ../src/engine/Effect.py:342
+msgid "Sleep"
+msgstr "Schlafen"
+
+#: ../data/core/abilities/sleep.py:5
+msgid "Put a opponent to sleep."
+msgstr "Versetzt einen Gegner in Schlaf"
+
+#: ../data/core/abilities/slow.py:3 ../src/engine/Effect.py:348
+msgid "Slow"
+msgstr "Verlangsamen"
+
+#: ../data/core/abilities/slow.py:5
+msgid "Decreases the speed of a unit."
+msgstr "Verringert die Geschwindigkeit einer Einheit"
+
+#: ../data/core/abilities/trip.py:3
+msgid "Trip"
+msgstr "Stolpern"
+
+#: ../data/core/abilities/trip.py:5
+msgid "Knocks down an enemy."
+msgstr "Bringt einen Gegner zu Boden"
+
+#: ../data/core/abilities/wingedfeet.py:3
+msgid "Winged Feet"
+msgstr "Geflügelte Füße"
+
+#: ../data/core/abilities/wingedfeet.py:5
+msgid "Increases the movement rate of a unit."
+msgstr "Erhöht die Geschwindigkeit einer Einheit"
+
+#: ../data/core/abilities/yell.py:3
+msgid "Yell"
+msgstr "Schreien"
+
+#: ../data/core/abilities/yell.py:5
+msgid "Yell, dazing enemies and damaging them slightly."
+msgstr "Betäubt Gegner und fügt ihnen langsam Schaden zu"
+
+#: ../src/Main.py:159
+msgid "To win: Defeat all enemies!"
+msgstr "Bezwinge alle Gegner um zu gewinnen!"
+
+#: ../src/Main.py:172
+msgid "You lost..."
+msgstr "Verloren..."
+
+#: ../src/Main.py:174
+msgid "You won!"
+msgstr "Gewonnen!"
+
+#: ../src/engine/Effect.py:344
+msgid "Paralyze"
+msgstr "Paralysieren"
+
+#: ../src/engine/Effect.py:345
+msgid "Paralyze Legs"
+msgstr "Beine paralysieren"
+
+#: ../src/engine/Effect.py:346
+msgid "Paralyze Arms"
+msgstr "Arme paralysieren"
+
+#: ../src/engine/Effect.py:349
+msgid "+ Move"
+msgstr "+ Bewegung"
+
+#: ../src/engine/Effect.py:350
+msgid "- Move"
+msgstr "- Bewegung"
+
+#: ../src/engine/Effect.py:351
+msgid "+ Weapon Atk"
+msgstr "+ Waffe Angr"
+
+#: ../src/engine/Effect.py:352
+msgid "+ Weapon Def"
+msgstr "+ Waffe Vert"
+
+#: ../src/engine/Effect.py:353
+msgid "+ Magic Atk"
+msgstr "+ Magie Angr"
+
+#: ../src/engine/Effect.py:354
+msgid "+ Magic Def"
+msgstr "+ Magie Vert"
+
+#: ../src/engine/Effect.py:355
+msgid "- Weapon Atk"
+msgstr "- Waffe Angr"
+
+#: ../src/engine/Effect.py:356
+msgid "- Weapon Def"
+msgstr "- Waffe Vert"
+
+#: ../src/engine/Effect.py:357
+msgid "- Magic Atk"
+msgstr "- Magie Angr"
+
+#: ../src/engine/Effect.py:358
+msgid "- Magic Def"
+msgstr "- Magie Vert"
+
+#: ../src/engine/Effect.py:359
+msgid "Invulnerable"
+msgstr "Unverwundbarkeit"
+
+#: ../src/engine/Effect.py:360
+msgid "Regen"
+msgstr "Regeneration"
+
+#: ../src/engine/Effect.py:362
+msgid "Tripped"
+msgstr "Sturz"
+
+#: ../src/engine/Name.py:44 ../src/engine/Name.py:47
+msgid "names-male"
+msgstr "namen-maenner"
+
+#: ../src/engine/Name.py:45
+msgid "names-female"
+msgstr "namen-frauen"
+
+#: ../src/engine/Unit.py:40
+msgid "neuter"
+msgstr "neutrum"
+
+#: ../src/engine/Unit.py:42
+msgid "female"
+msgstr "weiblich"
+
+#: ../src/engine/Unit.py:43
+msgid "male"
+msgstr "männlich"
+
+#: ../src/gui/ScenarioChooser.py:38
+msgid "Choose a scenario:"
+msgstr "Wähle ein Szenario"
+
+#: ../src/gui/ScenarioChooser.py:83
+msgid "Castle"
+msgstr "Burg"
+
+#: ../src/gui/ScenarioChooser.py:83
+msgid "Hill & Ravine"
+msgstr "Hügel & Schluchten"
+
+#: ../src/gui/ScenarioChooser.py:83
+msgid "Wall"
+msgstr "Mauer"
+
+#: ../src/gui/ScenarioChooser.py:84
+msgid "Randomly Generated (Easy)"
+msgstr "Zufällig Generiert (Leicht)"
+
+#: ../src/gui/ScenarioChooser.py:85
+msgid "Randomly Generated (Normal)"
+msgstr "Zufällig Generiert (Normal)"
+
+#: ../src/gui/ScenarioChooser.py:86
+msgid "Randomly Generated (Difficult)"
+msgstr "Zufällig Generiert (Schwer)"
+
+#: ../src/gui/ScenarioGUI.py:206
+msgid "Miss"
+msgstr "Verfehlt"
+
+#: ../src/gui/Sprite.py:412
+msgid "(%2d,%2d) h:%2d"
+msgstr "(%2d,%2d) h:%2d"
+
+#: ../src/gui/Sprite.py:469
+msgid "HP: %d/%d"
+msgstr "HP: %d/%d"
+
+#: ../src/gui/Sprite.py:487
+msgid "SP: %d/%d"
+msgstr "SP: %d/%d"
+
+#: ../src/gui/Sprite.py:501
+msgid "Move: %d  Jump: %d"
+msgstr "Beweg: %d  Sprung: %d"
+
+#: ../src/gui/Sprite.py:510
+msgid "W.Atk: %d  W.Def: %d"
+msgstr "W.Angr: %d  W.Vert: %d"
+
+#: ../src/gui/Sprite.py:519
+msgid "M.Atk: %d  M.Def: %d"
+msgstr "M.Angr: %d  M.Vetr: %d"
+
+#: ../src/gui/Sprite.py:528
+msgid "Lv. %d %s"
+msgstr "Lv. %d %s"
+
+#: ../src/gui/Sprite.py:537
+msgid "Speed: %d"
+msgstr "Geschw: %d"
+
+#: ../src/gui/Sprite.py:820
+msgid " (%d SP)"
+msgstr " (%d SP)"
+

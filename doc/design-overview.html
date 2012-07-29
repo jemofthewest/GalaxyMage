@@ -1,0 +1,187 @@
+<html>
+<head>
+<title>GalaxyMage</title>
+<link rel="stylesheet" type="text/css" href="style.css" title="GalaxyMage Stylesheet" />
+<meta name="Keywords" content="GalaxyMage,tactical,strategic,rpg,game,open-source,Linux" />
+<meta name="Description" content="GalaxyMage is an open-source tactical/strategic RPG for Windows, Linux, and Macintosh." />
+</head>
+<body>
+
+<h1>Design Overview</h1>
+
+This page gives a high-level overview of all the major components of a
+GalaxyMage campaign. By the time you're done reading this page, you
+should have a good understanding of how all the pieces fit
+together. After continuing on to learn about the GalaxyMage <a
+href="directory-structure.html">directory structure</a> and <a
+href="config-file-format.html">config file format</a>, you'll know all
+you need to know to start on your own GalaxyMage campaign!
+
+<h2>Campaigns</h2>
+
+A <i>campaign</i> is basically a complete game that uses the
+GalaxyMage engine. Right now, GalaxyMage ships with one campaign,
+called "demo", that simply has a few demonstration scenarios. In
+future releases, we will start to distribute one or more official
+campaigns along with GalaxyMage. Right now, true campaigns aren't
+implemented yet -- you can't actually string sequences of battles
+together in the engine. But that doesn't mean you can't design the
+different scenarios now, and use them later.
+
+<h2>Scenarios</h2>
+
+A campaign mostly consists of a group of related
+<i>scenarios</i>. Each scenario defines a single battle. Right now, a
+scenario file specifies:
+
+<ul>
+<li>The <i>map</i> that the battle will take place on.</li>
+<li>The <i>units</i> possessed by each <i>faction</i> of the battle.</li>
+<li>The <i>ending conditions</i> for the battle.</li>
+<li>The <i>lighting</i> and <i>music</i> to use for the battle.</li>
+</ul>
+
+Soon, we will add the ability to specify what happens when each ending
+condition is satisfied -- that is, you'll be able to actually string
+scenarios together into a true campaign. For now, the player's units
+and their positions on the field are specified in the scenario
+file. Eventually, the player will be able to choose which units he/she
+would like to fight with, and place them in an initial region of the
+battlefield.
+
+<h2>Maps</h2>
+
+A <i>map</i> is the environment in which a battle occurs. A map can be
+used by multiple scenarios, if you would like multiple battles to take
+place on the same battlefield. A map file specifies:
+
+<ul>
+<li>The width and height of the map.</li>
+<li>The height of each map square.</li>
+<li>Other attributes for each map square, such as a color, a texture,
+and so on.</li>
+</ul>
+
+<h2>Units</h2>
+
+<i>Units</i> are the actual characters that participate in a
+battle. We call them "units" instead of "characters" because the word
+"character" is used for many different things in computer programming,
+and it's slightly less confusing for developers that way. :) Each unit
+includes:
+
+<ul>
+
+<li>A bunch of different <i>stats</i>, which determine the unit's
+performance in battle.</li>
+
+<li>A <i>class</i>, which determines (among other things) how the
+unit's stats grow when it gains a level, and the abilities available
+to the unit. We plan on eventually adding <i>multiclassing</i>, which
+will allow a unit to advance in different classes to learn different
+sorts of abilities.</li>
+
+<li><i>Abilities</i>, which are different skills that can be used in
+combat. The only abilities implemented so far are <i>action
+abilities</i>, which are chosen by the player (or AI) as an action
+during battle. These abilities are listed under the "Special" menu
+option.</li>
+
+<li>A set of sprites, which determine how the unit looks when
+displayed on screen.</li>
+
+<li>A gender, which is used to determine what the unit looks like and
+to choose a name for the unit. (This is all that gender will ever
+affect.)</li>
+
+<li>A name, which is chosen randomly based on the unit's gender.</li>
+
+<li>If the unit is computer-controlled, it contains an <i>AI</i>,
+which will choose actions for the unit during battle. Each unit has
+its own AI because eventually we will have the ability to create units
+with different "personalities" -- some units might be foolhardy, some
+might be timid, others might be concerned about keeping their friends
+alive, and so on.</li>
+</ul>
+
+Eventually, units will have even more things, such as equipment and
+weaknesses/strengths to different types of damage, but none of that is
+implemented yet.
+
+<h2>Classes</h2>
+
+As mentioned before, every unit has a <i>class</i>. When a unit is
+first created, it has an <i>initial class</i>, which determines the
+<i>base values</i> of the unit's stats. Every time the unit gains a
+level, it chooses a class to level up in -- and its stats grow based
+on the <i>growth values</i> specified by the class. Classes also
+define a <i>multiplier value</i> for each stat. This will be used once
+multiclassing is implemented. For now, you don't have to worry about
+it.
+<p>
+Each class also contains a list of <i>abilities</i>, and how many
+levels a unit has to take in that class in order to learn each
+ability. So as a unit gains levels in a class, it will learn new
+abilities.
+<p>
+Each class also defines a set of sprites that will be used to display
+units that are of that class. These sprites can be overridden on a
+per-unit basis, but for most units you'll simply want to use the
+default class sprites.
+
+<h2>Abilities</h2>
+
+Right now, the only abilities implemented are <i>action abilities</i>
+-- abilities that the player (or AI) can choose as an action during
+battle. Eventually there may be other types of abilities. The basic
+"Attack" command is also implemented as an action ability. The
+specific ability depends on which type of weapon the unit is wielding,
+so if the unit is wielding a sword, the "sword" ability will be
+used. (Since equipment isn't implemented yet, all "Attack" actions
+currently use the "sword" ability.) An ability contains:
+
+<ul>
+<li>A name and description, which are displayed to the player.</li>
+
+<li>A <i>cost</i>: the amount of SP required to use the ability. Some
+abilities (such as the basic attack abilities) have a cost of 0.</li>
+
+<li>A <i>target type</i>: which targets are affected by the ability. This
+can be either FRIENDLY, HOSTILE, or FRIENDLY_AND_HOSTILE.</li>
+
+<li>A <i>range</i>: an area that says where the ability can be
+targeted, relative to the unit's current position. There are many
+different types of ranges available, including circles, squares, and
+crosses.</li>
+
+<li>An <i>area of effect</i>, or <i>AOE</i>: the area around the
+targeted area that is also affected by the ability. A simple attack
+will usually have an AOE of just the single square that is targeted,
+but special attacks can have AOEs or arbitrary shape, including
+circles, squares, and crosses.</li>
+
+<li>A list of <i>effects</i>, which determine what happens to each
+target that is affected by the ability. Right now, the only types of
+effects are damage and healing; later, we will implement various sorts
+of status effects.</li>
+
+<li>A sound that is played when the action is initiated.</li>
+</ul>
+
+Later, we will add more user-interface fields to the actions, such as
+the sound to make when the ability hits a target, some
+graphics/animations to use to display the ability as it's used, and so
+on.
+
+<h1>Conclusion</h1>
+
+Now you know all about the various components of a GalaxyMage
+campaign. Before going further, you might want to read about the
+GalaxyMage <a href="directory-structure.html">directory structure</a>,
+especially about the contents of the <code>data/</code>
+directory. Then you can read about the basic GalaxyMage <a
+href="config-file-format.html">config file format</a> and get started
+writing your own scenarios, maps, abilities, and so on!
+
+</body>
+</head>

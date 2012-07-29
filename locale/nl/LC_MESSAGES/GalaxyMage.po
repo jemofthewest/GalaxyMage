@@ -1,0 +1,333 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: Mon Feb 20 08:11:02 2006\n"
+"PO-Revision-Date: 2006-03-11 15:21+0100\n"
+"Last-Translator: Julien ROSSI <wesnothtux2b@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: ../data/core/abilities/biteofthevampire.py:3
+msgid "Bite of The Vampire"
+msgstr ""
+
+#: ../data/core/abilities/biteofthevampire.py:5
+msgid "Bite into your enemy and drink her blood!"
+msgstr ""
+
+#: ../data/core/abilities/crawl.py:3
+msgid "Crawl"
+msgstr ""
+
+#: ../data/core/abilities/crawl.py:5
+msgid "Decreases the movement rate of a unit."
+msgstr "Verminderd de bewegingspunten van een eenheid"
+
+#: ../data/core/abilities/defend.py:3
+msgid "Defend"
+msgstr "Verdediging"
+
+#: ../data/core/abilities/defend.py:5
+msgid "Increase your defense temporarily."
+msgstr "Verhoogt je verdediginf tijdelijk"
+
+#: ../data/core/abilities/drainlife.py:3
+msgid "Drain Life"
+msgstr ""
+
+#: ../data/core/abilities/drainlife.py:5
+msgid "Regenerate yourself at the expense of your enemy."
+msgstr ""
+
+#: ../data/core/abilities/fire.py:3
+msgid "Fire"
+msgstr "Vuur"
+
+#: ../data/core/abilities/fire.py:5
+msgid "Weak fire spell."
+msgstr "zwakke vuurspel"
+
+#: ../data/core/abilities/freeze.py:3
+#: ../src/engine/Effect.py:343
+msgid "Freeze"
+msgstr "Bevroren"
+
+#: ../data/core/abilities/freeze.py:5
+msgid "Weak ice spell. (Sometimes freezes.)"
+msgstr "Zwakke koudspel (bevroort soms)"
+
+#: ../data/core/abilities/haste.py:3
+#: ../src/engine/Effect.py:347
+msgid "Haste"
+msgstr ""
+
+#: ../data/core/abilities/haste.py:5
+msgid "Increases the speed of a unit."
+msgstr "Verhoogte het snelheid van een eenheid"
+
+#: ../data/core/abilities/hold.py:3
+msgid "Hold"
+msgstr ""
+
+#: ../data/core/abilities/hold.py:5
+msgid "Holds an enemy in place."
+msgstr ""
+
+#: ../data/core/abilities/lifesink.py:3
+msgid "Life Sink"
+msgstr ""
+
+#: ../data/core/abilities/lifesink.py:5
+msgid "A relatively strong, life draining attack."
+msgstr ""
+
+#: ../data/core/abilities/poison.py:3
+#: ../src/engine/Effect.py:361
+msgid "Poison"
+msgstr "Gif"
+
+#: ../data/core/abilities/poison.py:5
+msgid "Poison your enemy, causing him to lose HP every turn."
+msgstr ""
+
+#: ../data/core/abilities/protect.py:3
+msgid "Protect"
+msgstr "Verdediging"
+
+#: ../data/core/abilities/protect.py:5
+msgid "Protect a friend for one turn."
+msgstr "Verdedigt een vriend voor een beurt."
+
+#: ../data/core/abilities/regenerate.py:3
+msgid "Regenerate"
+msgstr ""
+
+#: ../data/core/abilities/regenerate.py:5
+msgid "Gives your ally regeneration."
+msgstr ""
+
+#: ../data/core/abilities/righteousness.py:3
+msgid "Righteousness"
+msgstr ""
+
+#: ../data/core/abilities/righteousness.py:5
+msgid "Call forth a righteous flame."
+msgstr ""
+
+#: ../data/core/abilities/sleep.py:3
+#: ../src/engine/Effect.py:342
+msgid "Sleep"
+msgstr "Slaap"
+
+#: ../data/core/abilities/sleep.py:5
+msgid "Put a opponent to sleep."
+msgstr ""
+
+#: ../data/core/abilities/slow.py:3
+#: ../src/engine/Effect.py:348
+msgid "Slow"
+msgstr "Vertraging"
+
+#: ../data/core/abilities/slow.py:5
+msgid "Decreases the speed of a unit."
+msgstr "Vertraagt vijandelijke eenheid"
+
+#: ../data/core/abilities/trip.py:3
+msgid "Trip"
+msgstr ""
+
+#: ../data/core/abilities/trip.py:5
+msgid "Knocks down an enemy."
+msgstr ""
+
+#: ../data/core/abilities/wingedfeet.py:3
+msgid "Winged Feet"
+msgstr "Gevleugelde voeten"
+
+#: ../data/core/abilities/wingedfeet.py:5
+msgid "Increases the movement rate of a unit."
+msgstr ""
+
+#: ../data/core/abilities/yell.py:3
+msgid "Yell"
+msgstr "Schreuw"
+
+#: ../data/core/abilities/yell.py:5
+msgid "Yell, dazing enemies and damaging them slightly."
+msgstr ""
+
+#: ../src/Main.py:159
+msgid "To win: Defeat all enemies!"
+msgstr "Om te winnen : dood alle vijanden!"
+
+#: ../src/Main.py:172
+msgid "You lost..."
+msgstr "Je hebt verloren..."
+
+#: ../src/Main.py:174
+msgid "You won!"
+msgstr ""
+
+#: ../src/engine/Effect.py:344
+msgid "Paralyze"
+msgstr ""
+
+#: ../src/engine/Effect.py:345
+msgid "Paralyze Legs"
+msgstr ""
+
+#: ../src/engine/Effect.py:346
+msgid "Paralyze Arms"
+msgstr ""
+
+#: ../src/engine/Effect.py:349
+msgid "+ Move"
+msgstr ""
+
+#: ../src/engine/Effect.py:350
+msgid "- Move"
+msgstr ""
+
+#: ../src/engine/Effect.py:351
+msgid "+ Weapon Atk"
+msgstr ""
+
+#: ../src/engine/Effect.py:352
+msgid "+ Weapon Def"
+msgstr ""
+
+#: ../src/engine/Effect.py:353
+msgid "+ Magic Atk"
+msgstr ""
+
+#: ../src/engine/Effect.py:354
+msgid "+ Magic Def"
+msgstr ""
+
+#: ../src/engine/Effect.py:355
+msgid "- Weapon Atk"
+msgstr ""
+
+#: ../src/engine/Effect.py:356
+msgid "- Weapon Def"
+msgstr ""
+
+#: ../src/engine/Effect.py:357
+msgid "- Magic Atk"
+msgstr ""
+
+#: ../src/engine/Effect.py:358
+msgid "- Magic Def"
+msgstr ""
+
+#: ../src/engine/Effect.py:359
+msgid "Invulnerable"
+msgstr ""
+
+#: ../src/engine/Effect.py:360
+msgid "Regen"
+msgstr ""
+
+#: ../src/engine/Effect.py:362
+msgid "Tripped"
+msgstr ""
+
+#: ../src/engine/Name.py:44
+#: ../src/engine/Name.py:47
+msgid "names-male"
+msgstr ""
+
+#: ../src/engine/Name.py:45
+msgid "names-female"
+msgstr ""
+
+#: ../src/engine/Unit.py:40
+msgid "neuter"
+msgstr "neuter"
+
+#: ../src/engine/Unit.py:42
+msgid "female"
+msgstr "vrouw"
+
+#: ../src/engine/Unit.py:43
+msgid "male"
+msgstr "man"
+
+#: ../src/gui/ScenarioChooser.py:38
+msgid "Choose a scenario:"
+msgstr "Kiez een scenario"
+
+#: ../src/gui/ScenarioChooser.py:83
+msgid "Castle"
+msgstr "Kasteel"
+
+#: ../src/gui/ScenarioChooser.py:83
+msgid "Hill & Ravine"
+msgstr "Heuvel en ravijn"
+
+#: ../src/gui/ScenarioChooser.py:83
+msgid "Wall"
+msgstr "Muur"
+
+#: ../src/gui/ScenarioChooser.py:84
+#, fuzzy
+msgid "Randomly Generated (Easy)"
+msgstr "Makkelijk"
+
+#: ../src/gui/ScenarioChooser.py:85
+#, fuzzy
+msgid "Randomly Generated (Normal)"
+msgstr "normaal"
+
+#: ../src/gui/ScenarioChooser.py:86
+#, fuzzy
+msgid "Randomly Generated (Difficult)"
+msgstr "Moeilijk"
+
+#: ../src/gui/ScenarioGUI.py:206
+msgid "Miss"
+msgstr ""
+
+#: ../src/gui/Sprite.py:412
+msgid "(%2d,%2d) h:%2d"
+msgstr "(%2d,%2d) h:%2d"
+
+#: ../src/gui/Sprite.py:469
+msgid "HP: %d/%d"
+msgstr "GP: %d/%d"
+
+#: ../src/gui/Sprite.py:487
+msgid "SP: %d/%d"
+msgstr "SP: %d/%d"
+
+#: ../src/gui/Sprite.py:501
+msgid "Move: %d  Jump: %d"
+msgstr ""
+
+#: ../src/gui/Sprite.py:510
+msgid "W.Atk: %d  W.Def: %d"
+msgstr "W.Aanv.: %d  W.Verd.: %d"
+
+#: ../src/gui/Sprite.py:519
+msgid "M.Atk: %d  M.Def: %d"
+msgstr "Mag. Aanv.: %d Mag.Verd.: %d"
+
+#: ../src/gui/Sprite.py:528
+msgid "Lv. %d %s"
+msgstr "Lv. %d %s"
+
+#: ../src/gui/Sprite.py:537
+msgid "Speed: %d"
+msgstr "Snelheid: %d"
+
+#: ../src/gui/Sprite.py:820
+msgid " (%d SP)"
+msgstr " (%d SP)"
+
